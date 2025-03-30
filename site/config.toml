@@ -1,0 +1,4 @@
+baseURL = "http://mynotes.local/"
+languageCode = "en-us"
+title = "My Notes"
+theme = "PaperMod" # Change based on your theme
