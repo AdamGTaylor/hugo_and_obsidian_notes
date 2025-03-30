@@ -2,6 +2,13 @@
 
 Hugo static site and helper scripts for Obsidian Note Hosting
 
+## How to use
+
+To make the experince more seamless, this repository provides a contanized solution. You just simply have to:
+``` bash
+cd docker/
+docker-compose build && docker-compose up -d
+```
 ---
 
 ## Goal
