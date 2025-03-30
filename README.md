@@ -17,7 +17,7 @@ The goal is to create a collection of scripts that would allow the user to creat
 
 ### Feature plan / implementation
 
-- [ ] Contenarize the application
+- [X] Contenarize the application
 - [ ] Add scripts to collect the desired markdown files
 - [ ] Redact sensitive information present in the markdown files
 

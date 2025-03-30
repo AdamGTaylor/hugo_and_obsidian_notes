@@ -1,0 +1,28 @@
+languageCode: "en-us"
+title: "Diary of Service Deployment"
+theme: "PaperMod" # Change based on your theme
+
+modules:
+  hugoVersion: "0.124.1"
+
+params:
+  showPostNavLinks: true
+  homeInfoParams:
+    Title: "Welcome to My Diary of Service Deployment"
+    Content: 
+      "This is my diary of service deployment. Such collection of notes and posts were created with the goal of making it somewhat easier to get tips and tricks while sharing experince and guidence with others. My hope that this on one day helps some to not explode in anger or deepdive into depression on the possible failures of deploying services. \n\n\n The services here are most of the time will be contanerized, thus a simlpe user, or a kubernetes cluster user could deploy them. Docker is loveable.\n\n\nHave a great time exploring!\n- Adam"
+  mainSections:
+    - "Home"
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "Posts"
+      url: "/post/"
+      weight: 2
+
+taxonomies:
+  tag: "tags"
+  category: "categories"

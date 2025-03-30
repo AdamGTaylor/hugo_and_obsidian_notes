@@ -1,4 +1,25 @@
-baseURL = "http://mynotes.local/"
 languageCode = "en-us"
 title = "My Notes"
 theme = "PaperMod" # Change based on your theme
+
+[modules]
+  modules.hugoVersion = "0.124.1"
+
+[params]
+  showPostNavLinks = true
+  homeInfoParams = { Title = "Welcome to My Notes", Content = "This is my collection of notes." }
+  mainSections = ["Home"]
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Posts"
+    url = "/post/"
+    weight = 2
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
