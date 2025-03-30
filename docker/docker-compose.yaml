@@ -1,0 +1,14 @@
+services:
+  hugo:
+    build: 
+      context: ..
+      dockerfile: docker/Dockerfile  # Use the correct Dockerfile location
+    container_name: mynotes_hugo
+    working_dir: /app  # Set the working directory
+    ports:
+      - "1313:1313"
+    volumes:
+      - ../site:/app  # Mount the 'site' folder properly
+    environment:
+      - HUGO_ENV=development
+    restart: unless-stopped
