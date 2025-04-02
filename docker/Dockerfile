@@ -21,7 +21,7 @@ RUN curl -L "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}
 WORKDIR /app
 RUN mkdir /ws
 COPY ../site /app
-COPY ../.env /app
+COPY ../.env /ws
 COPY ../docker/entrypoint.sh /ws
 
 # Make sure the script is executable

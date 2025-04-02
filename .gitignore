@@ -176,3 +176,6 @@ cython_debug/
 
 # Add lock files
 *.lock
+
+site/public/
+! site/public/.keep
