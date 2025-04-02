@@ -17,9 +17,10 @@ The goal is to create a collection of scripts that would allow the user to creat
 
 ### Feature plan / implementation
 
-- [X] Contenarize the application
-- [ ] Add scripts to collect the desired markdown files
-- [ ] Redact sensitive information present in the markdown files
+- [X] Contenarize the application.
+- [ ] Add scripts to collect the desired markdown files.
+- [ ] Redact sensitive information present in the markdown files.
+- [ ] Add a better webserver to the stack. Huge generates static files, webserver serves static files.
 
 These will be the main features.
 

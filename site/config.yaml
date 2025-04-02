@@ -19,8 +19,8 @@ menu:
     - name: "Home"
       url: "/"
       weight: 1
-    - name: "Posts"
-      url: "/post/"
+    - name: "Services"
+      url: "/services/"
       weight: 2
 
 taxonomies:
