@@ -52,7 +52,6 @@ services:
 This compose file contains the usual stuff, but a couple of extras are there:
 - **priviliged**: it allows docker to bypass some checks and in my case it was needed to access the Coral TPU USB-C I was using. 
 - **devices: /dev/dri/renderD128**: This the integrated GPU in the processor, which is not powerful, but good enough to speed up ffmpeg.
--  **ports**: 
 
 ### Note on TCP traffic and Ports
 The only problem allowing tcp communication is that the packages can arrive in a different order than what is intended. In the case of an NVR, this could pose an issue as frames arriving in a different order than what is intended results to incorrect recordings.

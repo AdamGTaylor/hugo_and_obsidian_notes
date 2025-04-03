@@ -1,0 +1,21 @@
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s, background 0.2s;
+    border: none;
+    z-index: 1000;
+}
+
+.copy-code:hover {
+    opacity: 1;
+    background: rgba(50, 50, 50, 0.9);
+}
