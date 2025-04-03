@@ -13,14 +13,17 @@ Frigate is an NVR (network video recorder) application / service. To make it eas
 ## Functions
 
 ### *Snapshots*
+
 It is possible to record the videostreams or pictures when something happens. These are made available under a different option, timeline.
 
 ### *Object detection*
+
 Different object types can be detect in the available streams. This can be solved with using a CPU detector, meaning our model runs on the CPU. This is not optimal, further solutions are there to ease the weight on the CPU: GPUs and TPUs can be used to run these models, while the integrated GPU in the CPU could be used to decode the streams.
 
 Personal taste: I got a Coral TPU (USB-C) that can be used to speed up the model's inference. It's another story how hard it is to update it.
 
 ## How to Set it up
+
 As usual, I went it the docker container and the docker-compose file.
 ```yaml
 services:
