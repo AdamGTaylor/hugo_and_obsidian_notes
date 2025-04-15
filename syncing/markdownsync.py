@@ -24,9 +24,10 @@ import argparse
 import pathlib
 import re
 import shutil
-import yaml
 import os
 
+import textwrap
+import yaml
 import logger
 
 import utils.cleaning_rule_handling as crh
@@ -110,14 +111,17 @@ def copy_files(config_path):
                             header = "---\n" + header + "---\n"
                         else:
                             # Add default stuff
-                            header = f"""
-                            ---
-                            title: {markdown_file.split(".")[0]}
-                            date: 
-                            draft: false
-                            tags: []
-                            categories: {sync_path['target'].split("/")[-1]}
-                            """
+                            header = textwrap.dedent(
+                                f'''
+                                ---
+                                title: "{markdown_file.split(".")[0]}"
+                                date: 
+                                draft: false
+                                tags: []
+                                categories: {sync_path['target'].split("/")[-1]}
+                                ---
+                                '''[1:]            # It leaves the first newline character in
+                            )
                             
                         # Save it
                         content_to_be_saved = header + markdown_text_redacted
@@ -132,27 +136,32 @@ def copy_files(config_path):
                     with open(pathlib.Path(sync_path['path']) / markdown_file, 'r', encoding='utf-8') as f:
                         markdown_text = f.read()
                         
+                    markdown_text_redacted = markdown_text
+                    
                     # Apply rules 
                     for rule in sync_path['rules']:
                         # Cursed way of calling a func
                         markdown_text_redacted = getattr(crh, rule)(markdown_text)
                     
-                    t_header_exists = markdown_text_target.startswith("---\ntitle:")
+                    t_header_exists = markdown_text_redacted.startswith("---\ntitle:")
                     
                     if not t_header_exists:
-                        header = f"""
-                        ---
-                        title: {markdown_file.split(".")[0]}
-                        date: 
-                        draft: false
-                        tags: []
-                        categories: {sync_path['target'].split("/")[-1]}
-                        """
-                        
-                        markdown_text_redacted = t_header_exists + markdown_text_redacted
+                        header = textwrap.dedent(
+                            f'''
+                            ---
+                            title: "{markdown_file.split(".")[0]}"
+                            date: 
+                            draft: false
+                            tags: []
+                            categories: {sync_path['target'].split("/")[-1]}
+                            ---
+                            '''[1:]            # It leaves the first newline character in
+                        )
+
+                        markdown_text_redacted = header + markdown_text_redacted
                     
                     with open(sync_target / markdown_file, 'w', encoding="utf-8") as f:
-                        f.write(content_to_be_saved)
+                        f.write(markdown_text_redacted)
                         f.close()
                                 
                 # Only target exists -> Leave as is, but warm user!
@@ -163,6 +172,7 @@ def copy_files(config_path):
                     print(f"Files are: {only_target}")
                 
         except Exception as e:
+            # TODO: better exception handling here
             print(f"Please look into this issue: {e}")
             pass
     
