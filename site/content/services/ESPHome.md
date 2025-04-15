@@ -14,7 +14,6 @@ What really shines in it is that rather than writing C/C++ code, it uses .yaml f
 ## How to Set it up
 
 ### Docker-compose file
-
 ``` yaml
 services:
   esphome:

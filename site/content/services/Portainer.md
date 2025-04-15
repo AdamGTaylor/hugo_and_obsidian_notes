@@ -10,7 +10,6 @@ categories: ["service"]
 Portainer is GUI that interracts with docker related stuff. The simple GUI not only allows simple interractions, but it is responsive to changes and through portainer agents, multiple devices can be added to our portainer stack.
 
 ## How to Set it up
-
 As usual, I went with the official docker image.
 
 ### Docker-compose file

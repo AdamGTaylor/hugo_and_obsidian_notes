@@ -10,15 +10,12 @@ categories: ["service"]
 Nginx proxy manager (NPM) is a simple reverse proxy server with a web GUI. It also support Let's encrypt to give out SSL certificates. 
 
 ## Dependency
-
 Depending on the way it will deployed, it requires different methods and packages to use it. I went with docker and docker image as everything is in it. 
 
 ### How to set it up
-
 To get the docker working, plenty of examples are present and as such this will be one of many good solution.
 
 ### Docker-compose file
-
 Here is the docker-compose file I am using for the project.
 ```yaml
 services:
@@ -59,7 +56,17 @@ Good tip: as i am using it as a reverse proxy and as such I have subdomains setu
 NPM comes with certbot already in the docker image. It is rather easy to setup and adds SSL certificate. The GUI makes it even easier and if setup correctly, it can be added to the "Proxy Hosts". 
 
 #### Why is this good?
-Well, some services that you may host in the near future require SSL certificates to function properly like Nextcloud. 
+Well, some services that you may host in the near future require https secure connections to function properly. It is rather annoying to:
+1. Remember to the exact ip address and port everytime,
+2. Typing https before it as http is the default.
+
+
+### Performance Issue
+#### SQLite or MariaDB/MySQL
+I have been using this for some time and as such, the performance drop is noticable after adding 10+ proxy hosts with different additional custom advanced options. Normally, NPM defaults to its sqlite backend, which seems to be scaling badly. Using a dedicated backend helps this scaling issu and the official documentation also provides help about how to do this.
+
+#### Advanced nginx settings
+
 
 ## Sources
 

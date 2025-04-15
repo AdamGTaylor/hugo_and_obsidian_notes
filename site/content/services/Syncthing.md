@@ -6,7 +6,6 @@ tags: ["file sharing", "guide"]
 categories: ["service"]
 ---
 ## Description
-
 Syncthing is a two-way file syncing service, similar to [[Nextcloud]], but it's more decentralized with limitation of the number of connected devices. It also has an official android and windows app that also supports browser GUI. The android app has been discontinued with the date of 4th of December, 2024. (f-droid fork option is available).
 
 Main features:
@@ -15,11 +14,9 @@ Main features:
 - Lightweight
 
 ## How to Set it up
-
 As usual, I went with the official docker image.
 
 ### Docker-compose file
-
 ``` yaml
 services:
   syncthing:

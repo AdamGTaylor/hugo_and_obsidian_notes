@@ -14,7 +14,6 @@ Node exporter is a system monitoring tool which monitors the host system and mak
 In this case it would obvious that we use it as a host system service as it meant to monitor the system that is runned on. However, docker has a trick around it and this service also has a docker image.
 
 ### Docker-compose file
-
 ``` yaml
 services:
   node-exporter:

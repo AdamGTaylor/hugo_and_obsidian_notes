@@ -10,11 +10,9 @@ categories: ["service"]
 Mosquitto is an MQTT services which can be self hosted with the official docker image. An MQTT service is consisting of a host (this container) and devices that subscribing and publishing to defined topics under it.
 
 # How to Set it up
-
 As usual, I went with the docker image.
 
 ### Docker-compose file
-
 Here is the docker-compose file I am using for the project.
 ``` yaml
 services:

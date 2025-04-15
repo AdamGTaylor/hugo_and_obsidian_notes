@@ -5,6 +5,7 @@ draft: true
 tags: ["GUI", "smart home", "guide"]
 categories: ["service"]
 ---
+
 ## Description
 
 ## How to Set it up
