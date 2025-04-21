@@ -4,11 +4,17 @@ Hugo static site and helper scripts for Obsidian Note Hosting
 
 ## How to use
 
-To make the experince more seamless, this repository provides a contanized solution. You just simply have to:
-``` bash
-cd docker/
-docker-compose build && docker-compose up -d
-```
+1. To make the experince more seamless, this repository provides a contanized solution. You just simply have to:
+    ```
+    git submodule update --init --recursive
+    ```
+2. After that you area ready to go to start the contanerized hugo 
+    ``` bash
+    cd docker/
+    docker-compose build && docker-compose up -d
+    ```
+This will serve you the site using the site/ content with paperMod. Right now hugo server is used which will be switched to nginx based solution.
+
 ---
 
 ## Goal
@@ -18,9 +24,9 @@ The goal is to create a collection of scripts that would allow the user to creat
 ### Feature plan / implementation
 
 - [X] Contenarize the application.
-- [ ] Add scripts to collect the desired markdown files.
-- [ ] Redact sensitive information present in the markdown files.
-- [ ] Add a better webserver to the stack. Huge generates static files, webserver serves static files.
+- [x] Add scripts to collect the desired markdown files.
+- [X] Redact sensitive information present in the markdown files.
+- [ ] Add a better webserver to the stack. Hugo generates static files, webserver serves static files.
 
 These will be the main features.
 
